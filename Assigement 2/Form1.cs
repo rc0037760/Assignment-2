@@ -29,7 +29,7 @@ namespace Assigement_2
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void TextBox3_TextChanged(object sender, EventArgs e)
@@ -96,8 +96,8 @@ namespace Assigement_2
             }
             double RT = R1 + R2;
             label1.Text = " RT =" + RT;
-                
-              
+            // this calculates the series circuit with 2 resistors
+
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -111,6 +111,7 @@ namespace Assigement_2
             {
                 MessageBox.Show("not correct value");
                 R3 = 0.0;
+            }
                 double R4;
                 try
                 {
@@ -118,7 +119,7 @@ namespace Assigement_2
                 }
                 catch
                 {
-                    MessageBox.Show("not correctvalue");
+                    MessageBox.Show("not correct value");
                     R4 = 0.0;
                 }
                 double R5;
@@ -132,8 +133,72 @@ namespace Assigement_2
                     R5 = 0.0;
                 }
                 double RT2 = R3 + R4 + R5;
-                label1.Text = "RT2 =" + RT2;
+                label2.Text = "RT2 =" + RT2;
+                // this calculates the series circuit with 3 resistors
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            double R6;
+            try
+            {
+                R6 = double.Parse(textBox3.Text);
             }
+            catch
+            {
+                MessageBox.Show("not correct value");
+                R6 = 0.0;
+            }
+            double R7;
+            try
+            {
+                R7 = double.Parse(textBox4.Text);
+            }
+            catch
+            {
+                MessageBox.Show("not correct value");
+                R7 = 0.0;
+            }
+            double RT3 = 1.0 / (1.0 / R6 + 1.0 / R7);
+            label3.Text = "RT3 =" + RT3;
+            // this calculates the parallel circuit with 2 resistors
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            double R8;
+            try
+            {
+                R8 = double.Parse(textBox5.Text);
+            }
+            catch
+            {
+                MessageBox.Show("not correct value");
+                R8 = 0.0;
+            }
+            double R9;
+            try
+            {
+                R9 = double.Parse(textBox6.Text);
+            }
+            catch
+            {
+                MessageBox.Show("not correct value");
+                R9 = 0.0;
+            }
+            double R10;
+            try
+            {
+                R10 = double.Parse(textBox7.Text);
+            }
+            catch
+            {
+                MessageBox.Show("not correct value");
+                R10 = 0.0;
+            }
+            double RT4 = 1.0 / (1.0 / R8 + 1.0 / R9 + 1.0 / R10);
+            label4.Text = "RT4 =" + RT4;
+            // THIS CALCULATES THE PARALLEL CIRCUIT WITH 3 RESISTORS
         }
     }
 }
